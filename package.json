@@ -1,0 +1,29 @@
+{
+  "name": "trillo",
+  "version": "1.0.0",
+  "description": "sass study project",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass sass/main.scss css/style.css",
+    "watch:sass": "sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "sass css/style.prefix.css css/style.css --style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuriandev/Trillo.git"
+  },
+  "author": "Iurii An",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuriandev/Trillo/issues"
+  },
+  "homepage": "https://github.com/yuriandev/Trillo#readme",
+  "devDependencies": {
+    "sass": "^1.56.2"
+  }
+}
